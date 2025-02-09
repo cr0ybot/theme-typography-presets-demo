@@ -1,0 +1,43 @@
+<!-- wp:group {"layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"3rem","bottom":"3rem"}}}} -->
+<div class="wp-block-group" style="padding-top:3rem;padding-bottom:3rem"><!-- wp:paragraph {"className":"has-eyebrow-typography-preset"} -->
+<p class="has-eyebrow-typography-preset">Typography Presets Demo</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":1,"className":"has-display-typography-preset"} -->
+<h1 class="wp-block-heading has-display-typography-preset">Named text styles for the block editor</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This theme demonstrates a custom typography preset system built on top of <code>theme.json</code>, CSS custom properties, and block editor filters.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2} -->
+<h2 class="wp-block-heading">Defaults from theme.json</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This paragraph does not have a custom class. Its typography comes from the default preset mapping in <code>settings.custom.defaultTypographyPreset</code>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Explicit preset classes</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"has-heading-typography-preset"} -->
+<p class="has-heading-typography-preset">Any block that supports typography can opt into a preset with a <code>has-&#123;slug&#125;-typography-preset</code> class.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"has-button-typography-preset"} -->
+<div class="wp-block-button has-button-typography-preset"><a class="wp-block-button__link wp-element-button">Example Button Preset</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><p>Typography presets let editors choose meaningful names instead of juggling font family, size, weight, and line height as separate controls.</p><cite>Default quote preset</cite></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:pullquote {"className":"has-body-typography-preset"} -->
+<figure class="wp-block-pullquote has-body-typography-preset"><blockquote><p>Pullquotes can keep a body preset while nested elements like citations map to a different preset.</p><cite>Nested cite preset</cite></blockquote></figure>
+<!-- /wp:pullquote --></div>
+<!-- /wp:group -->
