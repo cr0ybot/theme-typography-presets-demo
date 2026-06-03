@@ -2,9 +2,18 @@
 	"name": "theme-typography-presets-demo",
 	"version": "1.0.0",
 	"private": true,
+	"files": [
+		"build/**",
+		"templates/**",
+		"*.php",
+		"README.md",
+		"style.css",
+		"theme.json"
+	],
 	"scripts": {
-		"build": "wp-scripts build src/index.js --output-path=build",
-		"start": "wp-scripts start src/index.js --output-path=build"
+		"build": "wp-scripts build src/index.js",
+		"start": "wp-scripts start src/index.js",
+		"zip": "wp-scripts plugin-zip"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^30.15.0"
