@@ -23,7 +23,15 @@ import TokenList from '@wordpress/token-list';
  * @return {JSX.Element|null} Typography preset control.
  */
 function TypographyPresetControl( { clientId, attributes, setAttributes } ) {
-	const [ { typographyPreset: presets } ] = useSettings( [ 'custom' ] );
+	// Sometimes undefined.
+	const settings = useSettings( [ 'custom' ] );
+	console.log( { settings } );
+	const [ { typographyPreset: presets } ] = settings ?? [];
+
+	// Working code.
+	// const [ settings ] = useSettings( 'custom' );
+	// console.log( { settings } );
+	// const { typographyPreset: presets } = settings ?? {};
 
 	if ( ! presets ) {
 		return null;
@@ -47,24 +55,11 @@ function TypographyPresetControl( { clientId, attributes, setAttributes } ) {
 
 	return (
 		<InspectorControls group="typography">
-			<ToolsPanelItem
+			<CustomSelectControl
 				label={ __( 'Preset', 'typography-presets-demo' ) }
-				hasValue={ () => !! attributes.typographyPreset }
-				onDeselect={ () => setAttributes( { typographyPreset: undefined } ) }
-				resetAllFilter={ () => ( { typographyPreset: undefined } ) }
-				panelId={ clientId }
-				isShownByDefault
-			>
-				<CustomSelectControl
-					label={ __( 'Preset', 'typography-presets-demo' ) }
-					value={ selectedOption }
-					options={ options }
-					onChange={ ( { selectedItem } ) =>
-						setAttributes( { typographyPreset: selectedItem.key } )
-					}
-					__next40pxDefaultSize
-				/>
-			</ToolsPanelItem>
+				options={ options }
+				__next40pxDefaultSize
+			/>
 		</InspectorControls>
 	);
 }
