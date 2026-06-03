@@ -7,8 +7,6 @@
 
 declare( strict_types=1 );
 
-require_once __DIR__ . '/includes/typography-presets.php';
-
 add_action(
 	'enqueue_block_editor_assets',
 	static function (): void {
