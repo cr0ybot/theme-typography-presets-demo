@@ -127,7 +127,8 @@ addFilter(
  * @return {JSX.Element|null} Typography preset control.
  */
 function TypographyPresetControl( { clientId, attributes, setAttributes } ) {
-	const [ { typographyPreset: presets } ] = useSettings( [ 'custom' ] );
+	const [ custom ] = useSettings( 'custom' );
+	const { typographyPreset: presets } = custom ?? {};
 
 	if ( ! presets ) {
 		return null;
